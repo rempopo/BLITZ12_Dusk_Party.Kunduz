@@ -12,20 +12,12 @@ disabledAI = 1;
 respawn = 3;
 respawnDelay = 9999999; 
 
+#define OVERVIEW(N,X) class overview_line##N { title = X ; values[] = {0}; texts[] = {""}; }
 class Params
 {   
-	class overview_line0
-	{
-		title = "Обзор:";
-		values[] = {0};
-		texts[] = {""};
-	};
-	class overview_line1
-	{
-		title = "Два отряда спецназа Чешской армии ищут склад оружия талибов";
-		values[] = {0};
-		texts[] = {""};
-	};
+	OVERVIEW(0, "Обзор:");
+	OVERVIEW(1, "Два отряда спецназа Чешской армии ищут склад оружия талибов");
+	OVERVIEW(2, "Breacher - с дробовиком | Demo - несет взрывчатку");
 	
 	class overview_line_break
 	{
