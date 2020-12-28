@@ -54,7 +54,7 @@
 #define ACR_H ["CUP_H_OpsCore_Grey","CUP_H_OpsCore_Black","CUP_H_OpsCore_Tan","CUP_H_OpsCore_Grey_SF"]
 #define ACR_G ["CUP_G_Scarf_Face_Tan","CUP_PMC_Facewrap_Black","G_Bandanna_khk","CUP_G_Scarf_Face_Grn"]
 #define ACR_V ["CUP_V_CZ_NPP2006_ok_des","CUP_V_CZ_NPP2006_co_des","CUP_V_CZ_NPP2006_ok_black","CUP_V_CZ_NPP2006_nk_des"]
-#define ACR_B ["","B_AssaultPack_cbr"]
+#define ACR_B ["B_AssaultPack_cbr","B_AssaultPack_khk"]
 #define ACR_EQUIP	["<EQUIPEMENT >>  ",ACR_U,ACR_V,ACR_B,ACR_H,ACR_G]
 /*
 kit_acrsf_default = [

@@ -1,24 +1,21 @@
-/*
+﻿/*
  *	You can change MissionDate to some specific date to override date set in mission editor:
- *		format:		[@Year, @Month, @Day, @Hours, @Minutes] (e.g. [2012, 12, 31, 12, 45])
+ *		a) array in format [YYYY,MM,DD,HH,mm] (e.g. [2012, 12, 31, 12, 45])
+ *		b) date (to use editor set date)
  */
-MissionDate = [
-	date select 0
-	, date select 1
-	, date select 2
-	, switch ("par_daytime" call BIS_fnc_getParamValue) do {
-		case 0: { 10 + round(random 4) };
-		case 1: { 20 + round(random 3) };
-		case 2: { round(random 24) };
-	}
-	, selectRandom [0,10,15,20,25,30,40,45,50]
-];
-publicVariable "MissionDate";
+private _date = [
+	date
+	, "par_daytime" call BIS_fnc_getParamValue
+	/* Расширеные опции: ["day","night","morning","midday","evening","midnight","random"] */
+	, ["day","night","random"] 
+] call dzn_fnc_randomizeTime;
 
 /*
- * Date
+ *	Date
  */
-setDate MissionDate;
+setDate _date;
+MissionDate = date;
+publicVariable "MissionDate";
 
 /*
  *	Weather
@@ -40,8 +37,29 @@ PlayerConnectedEH = addMissionEventHandler ["PlayerConnected", {
 	publicVariable "PlayerConnectedData";
 }];
 
+/*
+ *	Mission custom server code goes here:
+ */
 
-// Custom scripts
+// -- Apply skill settings to units
+
+if ("par_dynai_overrideSkill" call BIS_fnc_getParamValue > 0) then {
+	[{ time > 10 && !isNil "dzn_dynai_complexSkill" }, {
+		((allUnits) select { side _x == east }) apply {
+
+			private _u = _x;
+			dzn_dynai_complexSkill params ["_isComplex", "_skillsParams"];
+
+			if (_isComplex) then {
+				{ _u setSkill _x } forEach _skillsParams;
+			} else {
+				_u setSkill _skillsParams;
+			};
+		};
+	}] call CBA_fnc_waitUntilAndExecute;
+};
+
+// -- Cave supression script 
 
 ["ace_flashbangExploded", {_this call fnc_handleFlashbang}] call CBA_fnc_addEventHandler;
 

@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=124;
+		nextID=176;
 	};
 	class Camera
 	{
-		pos[]={1277.5151,128.24629,3505.9983};
-		dir[]={0.16139865,-0.65431267,-0.73888177};
-		up[]={0.13966227,0.75610358,-0.63936085};
-		aside[]={-0.9770124,1.0986478e-006,-0.21341544};
+		pos[]={1646.8873,128.24629,2410.9199};
+		dir[]={0.43847403,-0.31701067,-0.84105289};
+		up[]={0.14664082,0.94834805,-0.28127164};
+		aside[]={-0.88677609,1.1484371e-006,-0.46231088};
 	};
 };
 binarizationWanted=0;
@@ -150,7 +150,7 @@ class AddonsMetaData
 		{
 			className="rhs_c_weapons";
 			name="AFRF Weapons Pack";
-			author="RHS Team";
+			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
 		class Item9
@@ -388,10 +388,10 @@ randomSeed=16016826;
 class ScenarioData
 {
 	author="10Dozen";
-	overviewText="Czesh Special Forces provides force recon operation to destroy cache";
+	overviewText="Спецназ Чешской армии проводит операцию по поиску и уничтожению схронов оружтя";
 	overViewPicture="overview.jpg";
 	overViewPictureLocked="overview.jpg";
-	onLoadMission="Czesh Special Forces provides force recon operation to destroy cache";
+	onLoadMission="Спецназ Чешской армии проводит операцию по поиску и уничтожению схронов оружтя";
 	loadScreen="overview.jpg";
 	saving=0;
 	respawnDialog=0;
@@ -510,8 +510,8 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="BLITZ18 Dusk Party (1B)";
-		overviewText="Czesh Special Forces provides force recon operation to destroy cache";
+		briefingName="BLITZ18 Dusk Party (1C)";
+		overviewText="Спецназ Чешской армии проводит операцию по поиску и уничтожению схронов оружтя";
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
 		startWind=0.1;

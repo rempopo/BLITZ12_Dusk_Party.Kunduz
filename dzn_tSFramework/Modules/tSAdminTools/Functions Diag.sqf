@@ -1,7 +1,7 @@
 tSF_Diag_AddDiagTopic = {
 	tSF_Diag_Subject = "tSF_Diagpage";
 	if !(player diarySubjectExists tSF_Diag_Subject) then {
-		player createDiarySubject [tSF_Diag_Subject, "tSF DIAGNOSTICS"];
+		player createDiarySubject [tSF_Diag_Subject, "Diagnostics"];
 	};
 	
 	private _text = "<font size='14' color='#b7f931'>%1</font>";
@@ -55,21 +55,26 @@ tSF_Diag_TSF_CollectTotalData = {
 			, _x select 1
 		];
 	} forEach [
-		["tSF_module_MissionDefaults"			,"Mission Defaults"]
-		,["tSF_module_MissionConditions"		,"Mission Conditions"]
-		,["tSF_module_IntroText"				,"Intro Text"]
-		,["tSF_module_Briefing"				,"Briefing"]
-		,["tSF_module_JIPTeleport"			,"JIP Teleport"]		
-		,["tSF_module_tSNotes"			,"tS Notes"]
-		,["tSF_module_tSNotesSettings"			,"tS Notes Settings"]		
-		,["tSF_module_CCP"					,"Casualties Collection Point"]
-		,["tSF_module_AirborneSupport"				,"Airborne Support"]		
-		,["tSF_module_Interactives"			,"Interactives"]
-		,["tSF_module_ACEActions"			,"Interactives ACE"]		
-		,["tSF_module_EditorVehicleCrew"		,"Editor Vehicle Crew"]
-		,["tSF_module_EditorUnitBehavior"		,"Editor Unit Behavior"]
-		,["tSF_module_EditorRadioSettings"		,"Editor Radio Settings"]		
-		,["tSF_module_tSAdminTools"			,"tS Admin Tools"]
+		["tSF_module_MissionDefaults","Mission Defaults"]
+		,["tSF_module_MissionConditions","Mission Conditions"]
+		,["tSF_module_IntroText","Intro Text"]
+		,["tSF_module_Briefing","Briefing"]
+		,["tSF_module_JIPTeleport","JIP Teleport"]		
+		,["tSF_module_tSNotes","tS Notes"]
+		,["tSF_module_tSSettings","tS Settings"]		
+		,["tSF_module_CCP","CCP"]
+		,["tSF_module_FARP","FARP"]
+		,["tSF_module_Authorization","Authorization"]		
+		,["tSF_module_ArtillerySupport","Artillery Support"]		
+		,["tSF_module_AirborneSupport","Airborne Support"]		
+		,["tSF_module_POM","POM"]		
+		,["tSF_module_Interactives","Interactives"]
+		,["tSF_module_ACEActions","ACE Actions"]		
+		,["tSF_module_EditorVehicleCrew","Editor Vehicle Crew"]
+		,["tSF_module_EditorUnitBehavior","Editor Unit Behavior"]
+		,["tSF_module_EditorRadioSettings","Editor Radio Settings"]		
+		,["tSF_module_Conversations","Conversations"]
+		,["tSF_module_tSAdminTools","tS Admin Tools"]
 	];
 	
 	player createDiaryRecord ["tSF_Diagpage", ["tSF - Totals", format ["%1<br />%2", _topicHead, _topicModules]]];
@@ -84,7 +89,7 @@ tSF_Diag_Dynai_CollectData = {
 			[NO CONFIG] Zone2		1
 			[NO ZONE]   Zone3		2
 	*/
-	private _dynaiTopic = "<font size='14' color='#b7f931'>Zones</font><br /";
+	private _dynaiTopic = "<font size='14' color='#b7f931'>Zones</font><br />";
 	
 	waitUntil { !isNil "dzn_dynai_zoneProperties" && !isNil "dzn_dynai_core" };
 	

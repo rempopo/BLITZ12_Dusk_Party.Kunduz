@@ -1,8 +1,9 @@
 //	Tacitcal Shift Framework initialization
 [] spawn {
         waitUntil { !isNil "MissionDate" };
+        if (!isServer && getClientStateNumber < 10) then { setDate MissionDate; };
 
-        // dzn Gear 	(set true to engage Edit mode)
+        // dzn Gear (set true to engage Edit mode)
         [false] execVM "dzn_gear\dzn_gear_init.sqf";
 
         // dzn DynAI
@@ -15,11 +16,10 @@
 };
 // *****
 
-
 fnc_collectIntel = {
 	params ["_target", "_caller", "_actionId", "_arguments"];
 	
 	deleteVehicle _target;
 	"mrk_cave" setMarkerAlpha 1;
-	[west, ["taskCave"], ["Cave located", "Cave located", ""], objNull, "SUCCEEDED", 3, true] call BIS_fnc_taskCreate;
+	[west, ["taskCave"], ["Обнаружить схрон", "Обнаружить схрон", ""], objNull, "SUCCEEDED", 3, true] call BIS_fnc_taskCreate;
 };

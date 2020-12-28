@@ -18,7 +18,7 @@ INTRACTIVES_TABLE
 	[
 		[EvidenceMap]
 		, {
-			_this addAction ["Collect intel", {hint "Intel collected"; _this call fnc_collectIntel; }];
+			_this addAction ["Поднять карту", {hint "Разведданые поулчены"; _this call fnc_collectIntel; }];
 		}
 		, "client"
 		, false
